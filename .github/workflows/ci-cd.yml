@@ -17,4 +17,4 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npm run check -- --reporters="mocha-junit-reporter"
+        run: npm run check | tee test-results.txt
