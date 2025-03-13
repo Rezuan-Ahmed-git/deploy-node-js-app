@@ -43,5 +43,18 @@ jobs:
       - name: Show the artifact
         run: ls -a
 
-      - name: Display test results
+      - name: Display the artifact test results
         run: cat test-results.txt
+
+      - name: Install The Package
+        run: npm install
+
+      - name: Run The Application By PM2
+        run: |
+          ls -a
+          pm2 status
+          pm2 delete node-app || true
+          pm2 start "npm start" --name="node-app"
+
+          # Save the process list
+          pm2 save
