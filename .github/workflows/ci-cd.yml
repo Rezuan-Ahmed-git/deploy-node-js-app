@@ -18,9 +18,3 @@ jobs:
 
       - name: Run tests
         run: npm run check -- --reporters="mocha-junit-reporter"
-
-      - name: Upload test results as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: test-results.xml
