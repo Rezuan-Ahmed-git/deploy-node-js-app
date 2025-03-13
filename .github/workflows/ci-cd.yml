@@ -17,7 +17,7 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npm run check | tee test-results.txt
+        run: npm test -- --reporters="mocha-junit-reporter"
 
       - name: Upload test results as artifact
         uses: actions/upload-artifact@v2
